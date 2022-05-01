@@ -11,6 +11,10 @@ import MyItems from './Pages/MyItems/MyItems'
 import AddItem from './Pages/AddItem/AddItem'
 import NotFound from './Pages/NotFound/NotFound'
 import Footer from './Pages/Shared/Footer/Footer'
+import OutgoingOrders from './Pages/OutgoingOrders/OutgoingOrders/OutgoingOrders'
+import IncomingPurchase from './Pages/IncomingPurchases/IncomingPurchase/IncomingPurchase';
+import IncomingPurchases from './Pages/IncomingPurchases/IncomingPurchases/IncomingPurchases';
+
 
 
 function App() {
@@ -21,9 +25,10 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/outgoingorders' element={<OutgoingOrders></OutgoingOrders>}></Route>
+        <Route path='/incomingpurchases' element={<IncomingPurchases></IncomingPurchases>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
         <Route path='/myitems' element={<MyItems></MyItems>}></Route>

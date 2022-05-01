@@ -10,7 +10,7 @@ const HomeIncomingPurchases = () => {
             <h2>Incoming Purchases</h2>
             <div className='home-puchases-container'>
                 {
-                    purchses.map(purchase => <HomeIncomingPurchase
+                    purchses.slice(0, 6).map(purchase => <HomeIncomingPurchase
                         key={purchase.id}
                         purchase={purchase}
                     ></HomeIncomingPurchase>)

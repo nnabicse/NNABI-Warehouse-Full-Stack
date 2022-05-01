@@ -10,7 +10,7 @@ const HomeOutgoingOrders = () => {
             <h2>Outgoing Orders</h2>
             <div className='home-orders-container'>
                 {
-                    orders.map(order => <HomeOutgoingOrder
+                    orders.slice(0, 6).map(order => <HomeOutgoingOrder
                         key={order.id}
                         order={order}
                     ></HomeOutgoingOrder>)

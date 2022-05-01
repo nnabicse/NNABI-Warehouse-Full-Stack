@@ -10,7 +10,7 @@ const HomeInventoryItems = () => {
             <h2>Inventory Items</h2>
             <div className='home-items-container'>
                 {
-                    items.map(item => <HomeInventoryItem
+                    items.slice(0, 6).map(item => <HomeInventoryItem
                         key={item.id}
                         item={item}
                     ></HomeInventoryItem>)
