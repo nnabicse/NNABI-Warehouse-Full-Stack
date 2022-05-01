@@ -19,7 +19,7 @@ const IncomingPurchases = () => {
                 {
                     purchases.map(purchase => <IncomingPurchase
                         key={purchase.id}
-                        order={purchase}
+                        purchase={purchase}
                     ></IncomingPurchase>)
                 }
             </table>

@@ -1,9 +1,14 @@
 import React from 'react';
 import './HomeInventoryItem.css';
 import { Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const HomeInventoryItem = (props) => {
-    const { name, price, desc, img, quantity, supplier } = props.item;
+    const { id, name, price, desc, img, quantity, supplier } = props.item;
+    const navigate = useNavigate();
+    const handleHomeInventoryItemsManageButton = (id) => {
+        navigate(`/inventory/${id}`)
+    }
     return (
         <div>
             <Card>
@@ -15,7 +20,7 @@ const HomeInventoryItem = (props) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <button>Manage</button>
+                    <button onClick={() => handleHomeInventoryItemsManageButton(id)}>Manage</button>
                 </Card.Footer>
             </Card>
         </div>

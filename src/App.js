@@ -14,6 +14,8 @@ import Footer from './Pages/Shared/Footer/Footer'
 import OutgoingOrders from './Pages/OutgoingOrders/OutgoingOrders/OutgoingOrders'
 import IncomingPurchase from './Pages/IncomingPurchases/IncomingPurchase/IncomingPurchase';
 import IncomingPurchases from './Pages/IncomingPurchases/IncomingPurchases/IncomingPurchases';
+import InventoryItems from './Pages/InventoryItems/InventoryItems/InventoryItems';
+import ItemDetail from './Pages/ItemDetail/ItemDetail';
 
 
 
@@ -27,6 +29,8 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/outgoingorders' element={<OutgoingOrders></OutgoingOrders>}></Route>
         <Route path='/incomingpurchases' element={<IncomingPurchases></IncomingPurchases>}></Route>
+        <Route path='/inventoryitems' element={<InventoryItems></InventoryItems>}></Route>
+        <Route path='/inventory/:id' element={<ItemDetail></ItemDetail>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
