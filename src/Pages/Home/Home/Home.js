@@ -1,10 +1,14 @@
 import React from 'react';
+import HomeIncomingPurchases from '../HomeIncomingPurchases/HomeIncomingPurchases';
+import HomeInventoryItems from '../HomeInventoryItems/HomeInventoryItems';
 import './Home.css';
 
 const Home = () => {
+
     return (
         <div>
-            This is Home
+            <HomeInventoryItems></HomeInventoryItems>
+            <HomeIncomingPurchases></HomeIncomingPurchases>
         </div>
     );
 };

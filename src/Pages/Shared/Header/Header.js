@@ -23,6 +23,7 @@ const Header = () => {
                 </Container>
             </Navbar>
         </div>
+    
     );
 };
 
