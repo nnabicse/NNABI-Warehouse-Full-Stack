@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <div className='header-container'>
+            <Navbar collapseOnSelect expand="lg" bg='primary' variant='dark'>
                 <Container>
                     <Navbar.Brand as={Link} to="/home"><h2>NNABI</h2><p>Warehouse</p></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -23,7 +23,7 @@ const Header = () => {
                 </Container>
             </Navbar>
         </div>
-    
+
     );
 };
 
