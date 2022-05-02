@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { useRef } from 'react';
+import { Card, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import './ItemDetail.css';
 
 const ItemDetail = () => {
+    const qtyRef = useRef(0);
     const { id } = useParams();
     const [items, setItems] = useItems();
     console.log(items);
@@ -13,25 +14,24 @@ const ItemDetail = () => {
     const { name, price, desc, img, quantity, supplier } = selectedItem;
 
     const handleItemDetailDeliveredButton = (id) => {
-        console.log(selectedItem);
         const newQuantity = parseInt(selectedItem.quantity) - 1;
-        console.log(newQuantity)
-        // Object.keys(selectedItem).map(key => {
-        //     if (key === 'quantity') {
-        //         selectedItem[key] = newQuantity;
-
-        //     }
-        // })
-
-        // const updatedItems = items.map(item => (item.id === id ? { ...item, quantity: newQuantity } : item));
-
-        // console.log(updatedItems);
         const objIndex = items.findIndex((obj => obj.id == id));
-        console.log(objIndex);
-        let newItems = [];
-        items[objIndex].quantity = newQuantity;
-        setItems(newItems = [...items]);
 
+        items[objIndex].quantity = newQuantity;
+        const newItems = [...items];
+        setItems(newItems);
+
+
+    }
+    const handleRestockButton = (event) => {
+        event.preventDefault();
+        const qty = qtyRef.current.value;
+        const newQuantity = parseInt(selectedItem.quantity) + parseInt(qty);
+        const objIndex = items.findIndex((obj => obj.id == id));
+        items[objIndex].quantity = newQuantity;
+        const newItems = [...items];
+        setItems(newItems);
+        qtyRef.current.value = "";
 
     }
 
@@ -50,6 +50,14 @@ const ItemDetail = () => {
                     <button onClick={() => handleItemDetailDeliveredButton(id)}>Delivered</button>
                 </Card.Footer>
             </Card>
+
+            <Form onSubmit={handleRestockButton}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Restock {name}</Form.Label>
+                    <Form.Control ref={qtyRef} type="number" placeholder="Enter Quantity" />
+                </Form.Group>
+                <button type='submit'>Restock</button>
+            </Form>
 
         </div>
     );
