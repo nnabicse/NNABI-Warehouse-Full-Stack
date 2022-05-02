@@ -16,6 +16,9 @@ const HomeInventoryItems = () => {
                     ></HomeInventoryItem>)
                 }
             </div>
+            <div>
+                <button>Manage Inventories</button>
+            </div>
 
         </div>
     );
