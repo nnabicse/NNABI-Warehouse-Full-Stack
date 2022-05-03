@@ -15,6 +15,7 @@ import OutgoingOrders from './Pages/OutgoingOrders/OutgoingOrders/OutgoingOrders
 import IncomingPurchases from './Pages/IncomingPurchases/IncomingPurchases/IncomingPurchases';
 import ItemDetail from './Pages/ItemDetail/ItemDetail';
 import ManageInventories from './Pages/ManageInventories/ManageInventories/ManageInventories';
+import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/outgoingorders' element={<OutgoingOrders></OutgoingOrders>}></Route>
         <Route path='/incomingpurchases' element={<IncomingPurchases></IncomingPurchases>}></Route>
         <Route path='/manageinventory' element={<ManageInventories></ManageInventories>}></Route>
+        <Route path='/addinventoryitem' element={<AddInventoryItem></AddInventoryItem>}></Route>
         <Route path='/inventory/:id' element={<ItemDetail></ItemDetail>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

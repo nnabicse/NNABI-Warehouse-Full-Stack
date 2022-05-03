@@ -2,8 +2,13 @@ import React from 'react';
 import './HomeInventoryItems.css';
 import useItems from '../../../hooks/useItems';
 import HomeInventoryItem from '../HomeInventoryItem/HomeInventoryItem';
+import { useNavigate } from 'react-router-dom';
 
 const HomeInventoryItems = () => {
+    const navigate = useNavigate();
+    const handleManageInventoriesButton = () => {
+        navigate('/manageinventory')
+    }
     const [items] = useItems();
     return (
         <div>
@@ -17,7 +22,7 @@ const HomeInventoryItems = () => {
                 }
             </div>
             <div>
-                <button>Manage Inventories</button>
+                <button onClick={handleManageInventoriesButton}>Manage Inventories</button>
             </div>
 
         </div>
