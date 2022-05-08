@@ -25,7 +25,7 @@ const HomeInventoryItems = () => {
                     }
                 </div>
                 <div className='home-inventory-manage-button-container'>
-                    <button className='home-inventory-manage-button' onClick={handleManageInventoriesButton}>Manage Inventories</button>
+                    <button className='home-inventory-manage-button btn btn-primary fw-bold' onClick={handleManageInventoriesButton}>Manage Inventories</button>
                 </div>
             </div>
         </div>

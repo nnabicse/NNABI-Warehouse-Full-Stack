@@ -1,8 +1,7 @@
-import React, { useRef } from 'react';
-import { Form } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import useItems from '../../../hooks/useItems';
 import ManageItem from '../ManageItem/ManageItem';
+import './ManageItems.css'
 
 const ManageItems = () => {
     const [items, setItems] = useItems()
@@ -20,14 +19,19 @@ const ManageItems = () => {
     }
 
     return (
-        <div>
-            {
-                items.map(item => <ManageItem
-                    key={item._id}
-                    item={item}
-                    handleItemDeleteButton={handleItemDeleteButton}
-                ></ManageItem>)
-            }
+        <div className='manage-items-section-container'>
+            <div className='manage-items-section-header-container'>
+                <h1 className='manage-items-section-header'>MANAGE ITEMS</h1>
+            </div>
+            <div className='manage-items-container'>
+                {
+                    items.map(item => <ManageItem
+                        key={item._id}
+                        item={item}
+                        handleItemDeleteButton={handleItemDeleteButton}
+                    ></ManageItem>)
+                }
+            </div>
         </div>
 
     );

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import './ManageInventory.css';
 
 const ManageInventory = (props) => {
     const { _id, name, price, desc, img, quantity, supplier } = props.item;
     const { handleDeleteButton } = props;
 
     return (
-        <div className='manage-inventory-items-card-header'>
+        <div className='manage-inventory-items-card-container'>
             <Card className='manage-inventory-items-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
@@ -18,10 +19,10 @@ const ManageInventory = (props) => {
                     <Card.Text>
                         {desc}
                     </Card.Text>
-                    <Card.Footer>
-                        <button onClick={() => handleDeleteButton(_id)}>Delete</button>
-                    </Card.Footer>
                 </Card.Body>
+                <Card.Footer className='border-0 bg-white'>
+                    <button className='btn btn-primary w-100 fw-bold' onClick={() => handleDeleteButton(_id)}>Delete</button>
+                </Card.Footer>
             </Card>
         </div>
     );

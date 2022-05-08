@@ -28,21 +28,33 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='/outgoingorders' element={<OutgoingOrders></OutgoingOrders>}></Route>
-        <Route path='/incomingpurchases' element={<IncomingPurchases></IncomingPurchases>}></Route>
+        <Route path='/outgoingorders' element={<RequireAuth>
+          <OutgoingOrders></OutgoingOrders>
+        </RequireAuth>}></Route>
+        <Route path='/incomingpurchases' element={<RequireAuth>
+          <IncomingPurchases></IncomingPurchases>
+        </RequireAuth>}></Route>
         <Route path='/manageinventory' element={<RequireAuth>
           <ManageInventories></ManageInventories>
         </RequireAuth>}></Route>
-        <Route path='/addinventoryitem' element={<AddInventoryItem></AddInventoryItem>}></Route>
-        <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
+        <Route path='/addinventoryitem' element={<RequireAuth>
+          <AddInventoryItem></AddInventoryItem>
+        </RequireAuth>}></Route>
+        <Route path='/manageitems' element={<RequireAuth>
+          <ManageItems></ManageItems>
+        </RequireAuth>}></Route>
         <Route path='/inventory/:id' element={<RequireAuth>
           <ItemDetail></ItemDetail>
         </RequireAuth>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/myitems' element={<MyItems></MyItems>}></Route>
-        <Route path='/addItem' element={<AddItem></AddItem>}></Route>
+        <Route path='/myitems' element={<RequireAuth>
+          <MyItems></MyItems>
+        </RequireAuth>}></Route>
+        <Route path='/addItem' element={<RequireAuth>
+          <AddItem></AddItem>
+        </RequireAuth>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       {/* <Footer></Footer> */}

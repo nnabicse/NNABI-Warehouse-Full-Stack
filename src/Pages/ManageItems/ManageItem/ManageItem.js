@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './ManageItem.css'
 
 const ManageItem = (props) => {
     const { _id, name, img, quantity, desc, price, supplier } = props.item
@@ -14,8 +15,8 @@ const ManageItem = (props) => {
     }
 
     return (
-        <div>
-            <Card>
+        <div className='manage-item-card-container'>
+            <Card className='manage-item-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>Item: {name}</Card.Title>
@@ -26,14 +27,15 @@ const ManageItem = (props) => {
                         {desc}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                    <div>
-                        <button onClick={() => handleItemDeleteButton(_id)}>Delete</button>
+                <Card.Footer className='card-footer'>
+                    <div className='manage-item-buttons-container'>
+                        <div className='manage-item-button'>
+                            <button onClick={() => handleItemDeleteButton(_id)}>Delete</button>
+                        </div>
+                        <div className='manage-item-button'>
+                            <button onClick={() => handleUpdateButton(_id)}>Update</button>
+                        </div>
                     </div>
-                    <div>
-                        <button onClick={() => handleUpdateButton(_id)}>Update</button>
-                    </div>
-
                 </Card.Footer>
             </Card>
         </div>

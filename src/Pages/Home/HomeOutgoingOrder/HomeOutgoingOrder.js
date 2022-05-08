@@ -1,34 +1,23 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import './HomeOutgoingOrder.css'
 
 const HomeOutgoingOrder = (props) => {
-    const { name, price, img, quantity, client } = props.order;
+    const { name, price, img, quantity, client, desc } = props.order;
     return (
-        <div>
-            <Card>
+        <div className='home-outgoing-order-items-card-container'>
+            <Card className='outgoing-order-home-items-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title> <span className='heading'>Item:</span> {name}</Card.Title>
+                    <Card.Title> <span className='heading'>Client:</span> {client}</Card.Title>
+                    <Card.Title> <span className='heading'>Price:</span> {price} USD</Card.Title>
+                    <Card.Title> <span className='heading'>Quantity:</span> {quantity} Units</Card.Title>
                     <Card.Text>
-                        {
-                            price
-                        }
-
+                        {desc}
                     </Card.Text>
-                    <Card.Text>
-                        {
-                            quantity
-                        }
-
-                    </Card.Text>
-                    <Card.Footer>
-                        {
-                            client
-                        }
-                    </Card.Footer>
                 </Card.Body>
             </Card>
-
         </div>
     );
 };

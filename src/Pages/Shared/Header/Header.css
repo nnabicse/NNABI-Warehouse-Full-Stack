@@ -1,0 +1,14 @@
+.logo h1 {
+    font-weight: 900;
+    color: goldenrod;
+}
+
+.logo p {
+    font-weight: 700;
+    line-height: 0;
+}
+
+.navitem {
+    color: black;
+    font-weight: 700;
+}

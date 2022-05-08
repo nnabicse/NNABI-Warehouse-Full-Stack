@@ -13,42 +13,42 @@ const Header = () => {
     }
     return (
         <div className='header-container'>
-            <Navbar collapseOnSelect expand="lg" bg='primary' variant='dark'>
+            <Navbar collapseOnSelect expand="lg" bg='white'>
                 <Container>
-                    <Navbar.Brand as={Link} to="/home"><h2>NNABI</h2><p>Warehouse</p></Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home"><div className='logo'><h1>NNABI</h1><p>WAREHOUSE</p></div></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/home">HOME</Nav.Link>
-                            <Nav.Link as={Link} to="/manageinventory">INVENTORY</Nav.Link>
-                            <Nav.Link as={Link} to="/outgoingorders">ORDERS</Nav.Link>
-                            <Nav.Link as={Link} to="/incomingpurchases">PURCHASES</Nav.Link>
-                            <Nav.Link as={Link} to="/blogs">BLOGS</Nav.Link>
-                            <Nav.Link as={Link} to="/about">ABOUT</Nav.Link>
+                            <Nav.Link as={Link} to="/home"><span className='navitem'>HOME</span></Nav.Link>
+                            <Nav.Link as={Link} to="/manageinventory"><span className='navitem'>INVENTORY</span></Nav.Link>
+                            <Nav.Link as={Link} to="/outgoingorders"><span className='navitem'>ORDERS</span></Nav.Link>
+                            <Nav.Link as={Link} to="/incomingpurchases"><span className='navitem'>PURCHASES</span></Nav.Link>
+                            <Nav.Link as={Link} to="/blogs"><span className='navitem'>BLOGS</span></Nav.Link>
+                            <Nav.Link as={Link} to="/about"><span className='navitem'>ABOUT</span></Nav.Link>
                             {
                                 user ?
-                                    <Nav.Link as={Link} to="/additem">ADD ITEM</Nav.Link> : ''
+                                    <Nav.Link as={Link} to="/additem"><span className='navitem'>ADD ITEM</span></Nav.Link> : ''
                             }
                             {
                                 user ?
-                                    <Nav.Link as={Link} to="/myitems">MY ITEMS</Nav.Link> : ''
+                                    <Nav.Link as={Link} to="/myitems"><span className='navitem'>MY ITEMS</span></Nav.Link> : ''
                             }
                             {
                                 user ?
-                                    <Nav.Link as={Link} to="/manageitems">MANAGE ITEMS</Nav.Link> : ''
+                                    <Nav.Link as={Link} to="/manageitems"><span className='navitem'>MANAGE ITEMS</span></Nav.Link> : ''
                             }
                         </Nav>
                         <Nav>
                             {
                                 user ?
                                     <button className='btn btn-primary border-0' onClick={handleSignOut}><Nav.Link as={Link} to="">
-                                        <span className='navbar-item'>
+                                        <span className='navitem'>
                                             SIGN OUT
                                         </span>
                                     </Nav.Link></button>
                                     :
                                     <button className='btn btn-primary border-0'><Nav.Link as={Link} to="/login">
-                                        <span className='navbar-item'>
+                                        <span className='navitem'>
                                             LOGIN
                                         </span>
                                     </Nav.Link></button>

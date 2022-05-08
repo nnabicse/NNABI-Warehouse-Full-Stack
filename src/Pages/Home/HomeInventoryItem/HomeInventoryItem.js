@@ -22,8 +22,8 @@ const HomeInventoryItem = (props) => {
                         {desc}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                    <button onClick={() => handleHomeInventoryItemsManageButton(_id)}>Manage</button>
+                <Card.Footer className='bg-white border-0'>
+                    <button className='btn w-100 bg-primary text-white fw-bold' onClick={() => handleHomeInventoryItemsManageButton(_id)}>Manage</button>
                 </Card.Footer>
             </Card>
         </div>

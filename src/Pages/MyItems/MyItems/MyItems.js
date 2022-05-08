@@ -44,15 +44,21 @@ const MyItems = () => {
     console.log(user);
 
     return (
-        <div>
-            <h2>This is My Items</h2>
-            {
-                myItems.map(myItem => <MyItem
-                    key={myItem._id}
-                    myItem={myItem}
-                    handleMyItemsDeleteButton={handleMyItemsDeleteButton}
-                ></MyItem>)
-            }
+        <div className='myitem-section-container'>
+            <div>
+                <div className='myitem-section-header-container'>
+                    <h1 className='myitem-section-header'>MY ITEMS</h1>
+                </div>
+                <div className='myitem-items-container'>
+                    {
+                        myItems.map(myItem => <MyItem
+                            key={myItem._id}
+                            myItem={myItem}
+                            handleMyItemsDeleteButton={handleMyItemsDeleteButton}
+                        ></MyItem>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };

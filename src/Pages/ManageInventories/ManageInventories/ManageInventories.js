@@ -29,7 +29,7 @@ const ManageInventories = () => {
                     <h1 className='manage-inventory-section-header'>MANAGE INVENTORIES</h1>
                 </div>
                 <div className='add-new-item-button-container'>
-                    <button className='add-new-item-button' onClick={handleAddNewItemButton}>Add New Item</button>
+                    <button className='add-new-item-button btn btn-primary fw-bold' onClick={handleAddNewItemButton}>Add New Item</button>
                 </div>
                 <div className='manage-inventory-item-container'>
                     {

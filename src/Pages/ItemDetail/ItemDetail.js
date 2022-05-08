@@ -49,28 +49,41 @@ const ItemDetail = () => {
     }
 
     return (
-        <div>
-            <Card>
-                <Card.Img variant="top" src={img} />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Title>{quantity}</Card.Title>
-                    <Card.Text>
-                        {desc}
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                    <button onClick={() => handleItemDetailDeliveredButton(id)}>Delivered</button>
-                </Card.Footer>
-            </Card>
+        <div className='item-detail-section-container'>
+            <div className='item-detail-header-container'>
+                <h1 className='item-detail-header'>ITEM DETAIL</h1>
+            </div>
+            <div className='item-detail-card-form-container'>
+                <div className='item-detail-card-container'>
+                    <Card className='item-detail-card'>
+                        <Card.Img variant="top" src={img} />
+                        <Card.Body>
+                            <Card.Title>Name: {name}</Card.Title>
+                            <Card.Title>Supplier: {supplier}</Card.Title>
+                            <Card.Title>Price: {price} USD</Card.Title>
+                            <Card.Title>Qty: {quantity} Units</Card.Title>
+                            <Card.Text>
+                                {desc}
+                            </Card.Text>
+                        </Card.Body>
+                        <Card.Footer className='item-detil-deliver-button-container border-0 bg-white'>
+                            <button className='item-detil-deliver-button btn btn-primary w-100 fw-bold border-none' onClick={() => handleItemDetailDeliveredButton(id)}>Delivered</button>
+                        </Card.Footer>
+                    </Card>
+                </div>
 
-            <Form onSubmit={handleRestockButton}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Restock {name}</Form.Label>
-                    <Form.Control ref={qtyRef} type="number" placeholder="Enter Quantity" />
-                </Form.Group>
-                <button type='submit'>Restock</button>
-            </Form>
+                <div className='item-detail-restock-form-container'>
+                    <Form className='item-detail-restock-form' onSubmit={handleRestockButton}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label> <h4 className='restock-header'>Restock {name}</h4></Form.Label>
+                            <Form.Control ref={qtyRef} required type="number" placeholder="Enter Quantity" />
+                        </Form.Group>
+                        <div className='item-detail-restock-button-container'>
+                            <button className='item-detail-restock-button btn btn-primary w-100 fw-bold' type='submit'>Restock</button>
+                        </div>
+                    </Form>
+                </div>
+            </div>
 
         </div>
     );

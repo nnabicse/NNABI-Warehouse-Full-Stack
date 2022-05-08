@@ -14,18 +14,18 @@ const HomeOutgoingOrders = () => {
         <div className='home-outgoing-section-container'>
             <div>
                 <div className='home-outgoing-section-header-container'>
-                    <h2 className='home-outgoing-section-header'>OUTGOING ORDERS</h2>
+                    <h1 className='home-outgoing-section-header'>RECENT SALES</h1>
                 </div>
                 <div className='home-outgoing-items-container'>
                     {
                         orders.slice(0, 6).map(order => <HomeOutgoingOrder
-                            key={order.id}
+                            key={order._id}
                             order={order}
                         ></HomeOutgoingOrder>)
                     }
                 </div>
-                <div className='home-outgoing-show-all-button-container'>
-                    <button className='home-outgoing-show-all-button' onClick={handleHomeOutgoingShowAll}>SHOW ALL</button>
+                <div className='home-outgoing-show-all-button-container bg'>
+                    <button className='home-outgoing-show-all-button btn btn-primary fw-bold' onClick={handleHomeOutgoingShowAll}>Show All Sales</button>
                 </div>
 
             </div>

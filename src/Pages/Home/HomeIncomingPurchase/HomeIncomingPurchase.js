@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import './HomeIncomingPurchase.css'
 
 const HomeIncomingPurchase = (props) => {
     const { name, price, desc, img, quantity, supplier } = props.purchase;
@@ -8,7 +9,10 @@ const HomeIncomingPurchase = (props) => {
             <Card className='home-incoming-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title>Name: {name}</Card.Title>
+                    <Card.Title>Supplier: {supplier}</Card.Title>
+                    <Card.Title>Price: {price} USD</Card.Title>
+                    <Card.Title>Qty: {quantity} Units</Card.Title>
                     <Card.Text>
                         {desc}
                     </Card.Text>

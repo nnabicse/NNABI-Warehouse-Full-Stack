@@ -1,0 +1,9 @@
+.manage-item-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.manage-item-button {
+    text-align: center;
+}
