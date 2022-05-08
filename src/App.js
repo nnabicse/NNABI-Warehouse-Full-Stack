@@ -6,7 +6,6 @@ import Blogs from './Pages/Blogs/Blogs';
 import About from './Pages/About/About';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
-import ManageItems from './Pages/ManageItems/ManageItems'
 import AddItem from './Pages/AddItem/AddItem'
 import NotFound from './Pages/NotFound/NotFound'
 import Footer from './Pages/Shared/Footer/Footer'
@@ -16,6 +15,8 @@ import ItemDetail from './Pages/ItemDetail/ItemDetail';
 import ManageInventories from './Pages/ManageInventories/ManageInventories/ManageInventories';
 import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
 import MyItems from './Pages/MyItems/MyItems/MyItems';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import ManageItems from './Pages/ManageItems/ManageItems/ManageItems';
 
 
 
@@ -29,13 +30,17 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/outgoingorders' element={<OutgoingOrders></OutgoingOrders>}></Route>
         <Route path='/incomingpurchases' element={<IncomingPurchases></IncomingPurchases>}></Route>
-        <Route path='/manageinventory' element={<ManageInventories></ManageInventories>}></Route>
+        <Route path='/manageinventory' element={<RequireAuth>
+          <ManageInventories></ManageInventories>
+        </RequireAuth>}></Route>
         <Route path='/addinventoryitem' element={<AddInventoryItem></AddInventoryItem>}></Route>
-        <Route path='/inventory/:id' element={<ItemDetail></ItemDetail>}></Route>
+        <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
+        <Route path='/inventory/:id' element={<RequireAuth>
+          <ItemDetail></ItemDetail>
+        </RequireAuth>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
         <Route path='/myitems' element={<MyItems></MyItems>}></Route>
         <Route path='/addItem' element={<AddItem></AddItem>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
