@@ -24,7 +24,6 @@ const Header = () => {
                             <Nav.Link as={Link} to="/outgoingorders"><span className='navitem'>ORDERS</span></Nav.Link>
                             <Nav.Link as={Link} to="/incomingpurchases"><span className='navitem'>PURCHASES</span></Nav.Link>
                             <Nav.Link as={Link} to="/blogs"><span className='navitem'>BLOGS</span></Nav.Link>
-                            <Nav.Link as={Link} to="/about"><span className='navitem'>ABOUT</span></Nav.Link>
                             {
                                 user ?
                                     <Nav.Link as={Link} to="/additem"><span className='navitem'>ADD ITEM</span></Nav.Link> : ''

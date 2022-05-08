@@ -20,7 +20,7 @@ const HomeIncomingPurchases = () => {
                     {
 
                         purchses.slice(0, 6).map(purchase => <HomeIncomingPurchase
-                            key={purchase.id}
+                            key={purchase._id}
                             purchase={purchase}
                         ></HomeIncomingPurchase>)
 

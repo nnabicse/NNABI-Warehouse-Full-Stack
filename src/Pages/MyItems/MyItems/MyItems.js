@@ -12,20 +12,16 @@ const MyItems = () => {
     const [items, setItems] = useItems()
     const [myItems, setMyItems] = useState([]);
     const [user] = useAuthState(auth);
-    console.log(localStorage.getItem('accessToken'))
     useEffect(() => {
         const getMyItems = async () => {
             const email = user.email;
-            console.log(localStorage.getItem('accessToken'))
             const url = `http://localhost:5000/myitem?email=${email}`;
-            console.log(url);
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
 
             });
-            console.log(data);
             setMyItems(data);
         }
         getMyItems();
@@ -48,9 +44,6 @@ const MyItems = () => {
         toast("Item Deleted Successfully")
 
     }
-
-
-    console.log(user);
 
     return (
         <div className='myitem-section-container'>

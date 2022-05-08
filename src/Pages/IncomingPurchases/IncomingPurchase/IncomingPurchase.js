@@ -5,7 +5,6 @@ import './IncomingPurchase.css'
 const IncomingPurchase = (props) => {
     const { _id, name, price, desc, img, quantity, supplier } = props.purchase;
     const { handleRecievePurchaseButton, handleRemoveforRecieve } = props
-    console.log(props);
     return (
         <div className='incoming-purchase-items-card-container'>
             <Card className='incoming-purchase-items-card'>

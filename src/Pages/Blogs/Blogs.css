@@ -1,0 +1,17 @@
+.qa {
+    width: 75%;
+    margin: auto;
+}
+
+.qaheadercon {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.qaheader {
+    font-weight: 700;
+    background-color: salmon;
+    padding: 10px;
+    border-radius: 20px;
+}

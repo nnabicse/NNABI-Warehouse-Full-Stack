@@ -12,9 +12,7 @@ const IncomingPurchases = () => {
         const { img, price, name, quantity, supplier, desc } = newPurchase;
         const purchase = { img, price, name, quantity, supplier, desc };
         const { _id } = purchase;
-        console.log(purchase);
 
-        console.log(purchase);
         fetch(`http://localhost:5000/item`, {
             method: 'POST',
             headers: {
@@ -32,7 +30,6 @@ const IncomingPurchases = () => {
             .then(res => res.json())
             .then(purchase => {
                 const filteredPurchases = purchases.filter(purchase => purchase._id !== id);
-                console.log(filteredPurchases);
                 setPurchases(filteredPurchases);
             });
 
