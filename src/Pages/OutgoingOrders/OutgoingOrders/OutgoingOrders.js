@@ -4,7 +4,8 @@ import OutgoingOrder from '../OutgoingOrder/OutgoingOrder';
 import useOrders from '../../../hooks/useOrders';
 
 const OutgoingOrders = () => {
-    const [orders] = useOrders();
+    const [orders] = useOrders()
+
     return (
         <div>
             <table>
@@ -13,12 +14,11 @@ const OutgoingOrders = () => {
                     <th>Price</th>
                     <th>Description</th>
                     <th>Quantity</th>
-                    <th>Supplier</th>
-                    <th>Action</th>
+                    <th>Client</th>
                 </tr>
                 {
                     orders.map(order => <OutgoingOrder
-                        key={order.id}
+                        key={order._id}
                         order={order}
                     ></OutgoingOrder>)
                 }

@@ -16,7 +16,7 @@ const HomeInventoryItems = () => {
             <div className='home-items-container'>
                 {
                     items.slice(0, 6).map(item => <HomeInventoryItem
-                        key={item.id}
+                        key={item._id}
                         item={item}
                     ></HomeInventoryItem>)
                 }

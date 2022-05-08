@@ -6,17 +6,29 @@ const AddInventoryItem = () => {
     const priceRef = useRef()
     const qtyRef = useRef()
     const imageRef = useRef()
+    const descRef = useRef()
     const emailRef = useRef()
+    const supplierRef = useRef()
     const handleSubmitButton = (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
         const price = priceRef.current.value;
         const quantity = qtyRef.current.value;
         const image = imageRef.current.value;
+        const desc = descRef.current.value
+        const supplier = supplierRef.current.value
         const email = emailRef.current.value;
 
-        const newItem = { name, price, quantity, image, email }
+        const newItem = { name, price, quantity, image, desc, supplier, email }
         console.log(newItem);
+
+        fetch(`http://localhost:5000/item`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
     }
     return (
         <div>
@@ -33,6 +45,14 @@ const AddInventoryItem = () => {
                 <Form.Group className="mb-3" controlId="formBasicItemQty">
                     <Form.Label>Item Quantity</Form.Label>
                     <Form.Control ref={qtyRef} type="number" placeholder="Enter Item Quantity" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicSupplier">
+                    <Form.Label>Supplier Name</Form.Label>
+                    <Form.Control ref={supplierRef} type="text" placeholder="Enter Supplier Name" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicItemDesc">
+                    <Form.Label>Item Description</Form.Label>
+                    <Form.Control ref={descRef} type="text" placeholder="Enter Item Description" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicItemImage">
                     <Form.Label>Item Image Link</Form.Label>

@@ -7,7 +7,6 @@ import About from './Pages/About/About';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import ManageItems from './Pages/ManageItems/ManageItems'
-import MyItems from './Pages/MyItems/MyItems'
 import AddItem from './Pages/AddItem/AddItem'
 import NotFound from './Pages/NotFound/NotFound'
 import Footer from './Pages/Shared/Footer/Footer'
@@ -16,6 +15,7 @@ import IncomingPurchases from './Pages/IncomingPurchases/IncomingPurchases/Incom
 import ItemDetail from './Pages/ItemDetail/ItemDetail';
 import ManageInventories from './Pages/ManageInventories/ManageInventories/ManageInventories';
 import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
+import MyItems from './Pages/MyItems/MyItems/MyItems';
 
 
 

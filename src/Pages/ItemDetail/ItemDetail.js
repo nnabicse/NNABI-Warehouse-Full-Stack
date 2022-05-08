@@ -1,38 +1,51 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Card, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import useItems from '../../hooks/useItems';
 import './ItemDetail.css';
 
 const ItemDetail = () => {
     const qtyRef = useRef(0);
     const { id } = useParams();
-    const [items, setItems] = useItems();
-    console.log(items);
-    let selectedItem = {};
-    items.filter(item => item.id == id).map(filteredItem => selectedItem = { ...filteredItem })
-    const { name, price, desc, img, quantity, supplier } = selectedItem;
+    const [item, setItem] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5000/item/${id}`)
+            .then(res => res.json())
+            .then(item => setItem(item))
+    }, [item])
+
+
+    const { name, price, desc, img, quantity, supplier } = item;
 
     const handleItemDetailDeliveredButton = (id) => {
-        const newQuantity = parseInt(selectedItem.quantity) - 1;
-        const objIndex = items.findIndex((obj => obj.id == id));
+        const newQuantity = parseInt(item.quantity) - 1;
+        const updatedQuantity = { newQuantity };
 
-        items[objIndex].quantity = newQuantity;
-        const newItems = [...items];
-        setItems(newItems);
-
+        fetch(`http://localhost:5000/item/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(setItem(item));
 
     }
     const handleRestockButton = (event) => {
         event.preventDefault();
         const qty = qtyRef.current.value;
-        const newQuantity = parseInt(selectedItem.quantity) + parseInt(qty);
-        const objIndex = items.findIndex((obj => obj.id == id));
-        items[objIndex].quantity = newQuantity;
-        const newItems = [...items];
-        setItems(newItems);
+        const newQuantity = parseInt(item.quantity) + parseInt(qty);
+        const updatedQuantity = { newQuantity };
+        fetch(`http://localhost:5000/item/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(setItem(item));
         qtyRef.current.value = "";
-
     }
 
     return (

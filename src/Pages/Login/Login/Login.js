@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
+const axios = require('axios').default;
 
 const Login = () => {
     const emailRef = useRef("");
@@ -30,11 +31,14 @@ const Login = () => {
             <p className='text-danger'>Error: {error?.message}{errorReset?.message}</p>
         </div>
     }
-    const handleSubmit = (event) => {
+    const handleSubmit = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', data.accessToken)
+        console.log(data)
     }
 
     const navigateRegister = event => {
