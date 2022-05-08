@@ -7,22 +7,20 @@ const OutgoingOrders = () => {
     const [orders] = useOrders()
 
     return (
-        <div>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                    <th>Client</th>
-                </tr>
-                {
-                    orders.map(order => <OutgoingOrder
-                        key={order._id}
-                        order={order}
-                    ></OutgoingOrder>)
-                }
-            </table>
+        <div className='outgoing-orders-section-container'>
+            <div>
+                <div className='outgoing-orders-section-header-container'>
+                    <h1 className='outgoing-orders-section-header'>RECENT SALES</h1>
+                </div>
+                <div className='outgoing-orders-item-container'>
+                    {
+                        orders.map(order => <OutgoingOrder
+                            key={order._id}
+                            order={order}
+                        ></OutgoingOrder>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };

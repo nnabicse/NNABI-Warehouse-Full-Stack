@@ -1,0 +1,17 @@
+.add-item-section-container {
+    width: 75%;
+    margin: auto;
+}
+
+.add-item-section-header-container {
+    text-align: center;
+}
+
+.add-item-form-container {
+    width: 50%;
+    margin: auto;
+}
+
+.add-item-button-container {
+    text-align: center;
+}

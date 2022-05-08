@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import useItems from '../../../hooks/useItems';
 import MyItem from '../MyItem/MyItem';
 import './MyItems.css';
 const axios = require('axios').default;
 
 const MyItems = () => {
+    const [items, setItems] = useItems()
     const [myItems, setMyItems] = useState([]);
     const [user] = useAuthState(auth);
     console.log(localStorage.getItem('accessToken'))
@@ -25,7 +27,18 @@ const MyItems = () => {
             setMyItems(data);
         }
         getMyItems();
-    }, [user])
+    }, [user, items])
+    function handleMyItemsDeleteButton(id) {
+        fetch(`http://localhost:5000/item/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(item => {
+                const filteredItems = items.filter(item => item._id !== id);
+                console.log(filteredItems);
+                setItems(filteredItems);
+            });
+    }
 
 
     console.log(user);
@@ -37,6 +50,7 @@ const MyItems = () => {
                 myItems.map(myItem => <MyItem
                     key={myItem._id}
                     myItem={myItem}
+                    handleMyItemsDeleteButton={handleMyItemsDeleteButton}
                 ></MyItem>)
             }
         </div>

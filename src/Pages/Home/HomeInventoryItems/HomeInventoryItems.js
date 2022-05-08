@@ -11,20 +11,23 @@ const HomeInventoryItems = () => {
     }
     const [items] = useItems();
     return (
-        <div>
-            <h2>Inventory Items</h2>
-            <div className='home-items-container'>
-                {
-                    items.slice(0, 6).map(item => <HomeInventoryItem
-                        key={item._id}
-                        item={item}
-                    ></HomeInventoryItem>)
-                }
-            </div>
+        <div className='home-inventory-section-container'>
             <div>
-                <button onClick={handleManageInventoriesButton}>Manage Inventories</button>
+                <div className='home-inventory-header-container'>
+                    <h1 className='home-inventory-header'>INVENTORY ITEMS</h1>
+                </div>
+                <div className='home-inventory-items-container'>
+                    {
+                        items.slice(0, 6).map(item => <HomeInventoryItem
+                            key={item._id}
+                            item={item}
+                        ></HomeInventoryItem>)
+                    }
+                </div>
+                <div className='home-inventory-manage-button-container'>
+                    <button className='home-inventory-manage-button' onClick={handleManageInventoriesButton}>Manage Inventories</button>
+                </div>
             </div>
-
         </div>
     );
 };

@@ -10,11 +10,14 @@ const HomeInventoryItem = (props) => {
         navigate(`/inventory/${id}`)
     }
     return (
-        <div>
-            <Card>
+        <div className='home-inventory-item-card-container'>
+            <Card className='home-inventory-item-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title>{name}: {quantity}</Card.Title>
+                    <Card.Title>Item: {name}</Card.Title>
+                    <Card.Title>Supplier: {supplier}</Card.Title>
+                    <Card.Title>Price: {price}</Card.Title>
+                    <Card.Title>Qty: {quantity}</Card.Title>
                     <Card.Text>
                         {desc}
                     </Card.Text>

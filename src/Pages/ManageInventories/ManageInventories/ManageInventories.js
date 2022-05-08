@@ -8,38 +8,41 @@ const ManageInventories = () => {
     const navigate = useNavigate();
     const [items, setItems] = useItems();
     const handleDeleteButton = (id) => {
-        const filtered = items.filter(item => item.id !== id);
-        const newItems = [...filtered];
-        setItems(newItems);
-        console.log(items);
+        fetch(`http://localhost:5000/item/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(item => {
+                const filteredItems = items.filter(item => item._id !== id);
+                console.log(filteredItems);
+                setItems(filteredItems);
+            });
     }
     const handleAddNewItemButton = () => {
         navigate('/addinventoryitem')
 
     }
     return (
-        <div>
+        <div className='manage-inventory-section-container'>
             <div>
-                <button onClick={handleAddNewItemButton}>Add New Item</button>
+                <div className='manage-inventory-section-header-container'>
+                    <h1 className='manage-inventory-section-header'>MANAGE INVENTORIES</h1>
+                </div>
+                <div className='add-new-item-button-container'>
+                    <button className='add-new-item-button' onClick={handleAddNewItemButton}>Add New Item</button>
+                </div>
+                <div className='manage-inventory-item-container'>
+                    {
+                        items.map(item => <ManageInventory
+                            key={item._id}
+                            item={item}
+                            handleDeleteButton={handleDeleteButton}
+                        ></ManageInventory>)
+                    }
+                </div>
             </div>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                    <th>Supplier</th>
-                    <th>Action</th>
-                </tr>
-                {
-                    items.map(item => <ManageInventory
-                        key={item.id}
-                        item={item}
-                        handleDeleteButton={handleDeleteButton}
-                    ></ManageInventory>)
-                }
-            </table>
         </div>
+
     );
 };
 

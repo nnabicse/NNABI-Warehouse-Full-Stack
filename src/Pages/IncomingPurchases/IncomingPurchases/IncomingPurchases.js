@@ -38,25 +38,22 @@ const IncomingPurchases = () => {
 
     }
     return (
-        <div>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                    <th>Supplier</th>
-                    <th>Action</th>
-                </tr>
-                {
-                    purchases.map(purchase => <IncomingPurchase
-                        key={purchase._id}
-                        purchase={purchase}
-                        handleRecievePurchaseButton={handleRecievePurchaseButton}
-                        handleRemoveforRecieve={handleRemoveforRecieve}
-                    ></IncomingPurchase>)
-                }
-            </table>
+        <div className='incoming-purchases-section-container'>
+            <div>
+                <div className='incoming-purchases-section-header-container'>
+                    <h1 className='incoming-purchases-section-header'>INCOMINIG PURCHASES</h1>
+                </div>
+                <div className='incoming-purchases-item-container'>
+                    {
+                        purchases.map(purchase => <IncomingPurchase
+                            key={purchase._id}
+                            purchase={purchase}
+                            handleRecievePurchaseButton={handleRecievePurchaseButton}
+                            handleRemoveforRecieve={handleRemoveforRecieve}
+                        ></IncomingPurchase>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };

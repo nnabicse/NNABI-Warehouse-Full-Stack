@@ -1,5 +1,13 @@
-.home-items-container {
+.home-inventory-items-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+}
+
+.home-inventory-header-container {
+    text-align: center;
+}
+
+.home-inventory-manage-button-container {
+    text-align: center;
 }

@@ -1,5 +1,13 @@
-.home-puchases-container {
+.home-incoming-items-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+}
+
+.home-incoming-header-container {
+    text-align: center;
+}
+
+.home-incoming-manage-button-container {
+    text-align: center;
 }

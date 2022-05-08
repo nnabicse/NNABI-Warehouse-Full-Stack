@@ -1,5 +1,13 @@
-.home-orders-container {
+.home-outgoing-items-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+}
+
+.home-outgoing-section-header-container {
+    text-align: center;
+}
+
+.home-outgoing-show-all-button-container {
+    text-align: center;
 }
