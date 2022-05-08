@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import Loading from '../../Login/Loading/Loading';
 import './HomeIncomingPurchase.css'
 
 const HomeIncomingPurchase = (props) => {

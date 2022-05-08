@@ -7,6 +7,10 @@ const ManageItems = () => {
     const [items, setItems] = useItems()
 
     const handleItemDeleteButton = (id) => {
+        const proceed = window.confirm("Are You Sure?");
+        if (!proceed) {
+            return
+        }
         fetch(`http://localhost:5000/item/${id}`, {
             method: 'DELETE',
         })

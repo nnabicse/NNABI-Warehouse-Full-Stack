@@ -27,13 +27,13 @@ const ManageItem = (props) => {
                         {desc}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer className='card-footer'>
+                <Card.Footer className='border-0 bg-white'>
                     <div className='manage-item-buttons-container'>
                         <div className='manage-item-button'>
-                            <button onClick={() => handleItemDeleteButton(_id)}>Delete</button>
+                            <button className='btn btn-primary fw-bold w-100' onClick={() => handleItemDeleteButton(_id)}>Delete</button>
                         </div>
                         <div className='manage-item-button'>
-                            <button onClick={() => handleUpdateButton(_id)}>Update</button>
+                            <button className='btn btn-primary fw-bold w-100' onClick={() => handleUpdateButton(_id)}>Update</button>
                         </div>
                     </div>
                 </Card.Footer>

@@ -7,7 +7,7 @@ const IncomingPurchase = (props) => {
     const { handleRecievePurchaseButton, handleRemoveforRecieve } = props
     console.log(props);
     return (
-        <div className='incoming-purchase-items-card-header'>
+        <div className='incoming-purchase-items-card-container'>
             <Card className='incoming-purchase-items-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
@@ -19,12 +19,12 @@ const IncomingPurchase = (props) => {
                         {desc}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                    <button className='incoming-purchase-recieve-button' onClick={() => {
+                <Card.Footer className='border-0 bg-white'>
+                    <button className='btn btn-primary fw-bold w-100 incoming-purchase-recieve-button' onClick={() => {
                         handleRecievePurchaseButton(_id);
                         handleRemoveforRecieve(_id);
                     }}
-                    >Recieved</button>
+                    >Recieve</button>
                 </Card.Footer>
             </Card>
         </div>

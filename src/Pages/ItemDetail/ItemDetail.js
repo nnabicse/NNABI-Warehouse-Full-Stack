@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Card, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './ItemDetail.css';
 
 const ItemDetail = () => {
@@ -45,6 +47,7 @@ const ItemDetail = () => {
         })
             .then(res => res.json())
             .then(setItem(item));
+        toast("Stock Updated Successfully")
         qtyRef.current.value = "";
     }
 

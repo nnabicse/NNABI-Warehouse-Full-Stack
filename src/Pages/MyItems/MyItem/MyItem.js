@@ -1,11 +1,12 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import './MyItem.css'
 
 const MyItem = (props) => {
     const { _id, name, img, price, email, desc, quantity, supplier } = props.myItem;
     const { handleMyItemsDeleteButton } = props;
     return (
-        <div className='my-items-card-header'>
+        <div className='my-items-card-container'>
             <Card className='my-items-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
@@ -18,10 +19,10 @@ const MyItem = (props) => {
                     <Card.Text>
                         {desc}
                     </Card.Text>
-                    <Card.Footer>
-                        <button onClick={() => handleMyItemsDeleteButton(_id)}>Delete</button>
-                    </Card.Footer>
                 </Card.Body>
+                <Card.Footer className='border-0 bg-white'>
+                    <button className='btn btn-primary fw-bold w-100' onClick={() => handleMyItemsDeleteButton(_id)}>Delete</button>
+                </Card.Footer>
             </Card>
         </div>
     );

@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './AddItem.css';
 
 const AddItem = () => {
@@ -24,7 +26,7 @@ const AddItem = () => {
         const email = emailRef.current.value;
 
         const newItem = { name, price, quantity, image, desc, supplier, email }
-        console.log(newItem);
+
 
         fetch(`http://localhost:5000/item`, {
             method: 'POST',
@@ -33,6 +35,8 @@ const AddItem = () => {
             },
             body: JSON.stringify(newItem)
         })
+        toast("Item Added in Stock")
+        event.target.reset();
     }
     return (
         <div className='add-new-item-section-container'>

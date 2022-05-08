@@ -4,6 +4,8 @@ import auth from '../../../firebase.init';
 import useItems from '../../../hooks/useItems';
 import MyItem from '../MyItem/MyItem';
 import './MyItems.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const axios = require('axios').default;
 
 const MyItems = () => {
@@ -29,6 +31,11 @@ const MyItems = () => {
         getMyItems();
     }, [user, items])
     function handleMyItemsDeleteButton(id) {
+        const proceeed = window.confirm("Are You Sure?")
+        if (!proceeed) {
+            return
+        }
+
         fetch(`http://localhost:5000/item/${id}`, {
             method: 'DELETE',
         })
@@ -38,6 +45,8 @@ const MyItems = () => {
                 console.log(filteredItems);
                 setItems(filteredItems);
             });
+        toast("Item Deleted Successfully")
+
     }
 
 

@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Spinner } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 const axios = require('axios').default;
@@ -25,6 +26,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    if (loading) {
+        return <Loading></Loading>;
+    }
     let errorElement;
     if (error || errorReset) {
         errorElement = <div>
@@ -38,7 +42,7 @@ const Login = () => {
         await signInWithEmailAndPassword(email, password);
         const { data } = await axios.post('http://localhost:5000/login', { email });
         localStorage.setItem('accessToken', data.accessToken)
-        console.log(data)
+        toast("Login Successfull")
     }
 
     const navigateRegister = event => {
@@ -77,7 +81,6 @@ const Login = () => {
                 <p>Forgot Password? <Link onClick={resetPassword} to='' className='text-danger pe-auto text-decoration-none'>Reset Password</Link></p>
             </div>
             <SocialLogin></SocialLogin>
-            <ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -17,6 +17,7 @@ import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
 import MyItems from './Pages/MyItems/MyItems/MyItems';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import ManageItems from './Pages/ManageItems/ManageItems/ManageItems';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -58,8 +59,9 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       {/* <Footer></Footer> */}
-
+      <ToastContainer></ToastContainer>
     </div>
+
   );
 }
 

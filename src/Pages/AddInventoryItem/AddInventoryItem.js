@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './AddInventoryItem.css';
 
 const AddInventoryItem = () => {
@@ -33,6 +35,9 @@ const AddInventoryItem = () => {
             },
             body: JSON.stringify(newItem)
         })
+        toast("Item Added in Inventory")
+        event.target.reset();
+
     }
     return (
         <div className='add-new-item-section-container'>

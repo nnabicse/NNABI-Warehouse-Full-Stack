@@ -4,7 +4,10 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Register.css'
+import Loading from '../Loading/Loading';
 
 const Register = () => {
     const emailRef = useRef("");
@@ -20,6 +23,9 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const navigate = useNavigate();
+    if (loadingCreate) {
+        return <Loading></Loading>
+    }
 
     let errorElement;
     if (errorCreate) {
@@ -37,6 +43,7 @@ const Register = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email, password);
+        toast("Succesafully Registered")
     }
 
     const navigateLogin = event => {
