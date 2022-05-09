@@ -6,7 +6,7 @@
 
 ### Live site link:
 
-use this link to view live site: https://independent-data-scientist.web.app/
+use this link to view live site: https://nnabi-warehouse.web.app/
 
 
 ---

@@ -13,7 +13,7 @@ const IncomingPurchase = (props) => {
                     <Card.Title> <span>Item:</span> {name}</Card.Title>
                     <Card.Title> <span>Supplier:</span> {supplier}</Card.Title>
                     <Card.Title> <span>Price:</span> {price} USD</Card.Title>
-                    <Card.Title> <span>Quantity:</span> {quantity} Units</Card.Title>
+                    <Card.Title> <span>Qty:</span> {quantity} Units</Card.Title>
                     <Card.Text>
                         {desc}
                     </Card.Text>

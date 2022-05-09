@@ -12,7 +12,7 @@ const HomeOutgoingOrder = (props) => {
                     <Card.Title> <span className='heading'>Item:</span> {name}</Card.Title>
                     <Card.Title> <span className='heading'>Client:</span> {client}</Card.Title>
                     <Card.Title> <span className='heading'>Price:</span> {price} USD</Card.Title>
-                    <Card.Title> <span className='heading'>Quantity:</span> {quantity} Units</Card.Title>
+                    <Card.Title> <span className='heading'>Qty:</span> {quantity} Units</Card.Title>
                     <Card.Text>
                         {desc}
                     </Card.Text>
