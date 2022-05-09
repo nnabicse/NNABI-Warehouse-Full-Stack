@@ -16,8 +16,8 @@ const HomeInventoryItem = (props) => {
                 <Card.Body>
                     <Card.Title>Item: {name}</Card.Title>
                     <Card.Title>Supplier: {supplier}</Card.Title>
-                    <Card.Title>Price: {price}</Card.Title>
-                    <Card.Title>Qty: {quantity}</Card.Title>
+                    <Card.Title>Price: {price} USD</Card.Title>
+                    <Card.Title>Qty: {quantity} Units</Card.Title>
                     <Card.Text>
                         {desc}
                     </Card.Text>

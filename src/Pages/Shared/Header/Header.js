@@ -36,6 +36,7 @@ const Header = () => {
                                 user ?
                                     <Nav.Link as={Link} to="/manageitems"><span className='navitem'>MANAGE ITEMS</span></Nav.Link> : ''
                             }
+                            <Nav.Link as={Link} to="/about"><span className='navitem'>ABOUT</span></Nav.Link>
                         </Nav>
                         <Nav>
                             {

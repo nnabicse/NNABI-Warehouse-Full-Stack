@@ -3,6 +3,7 @@ import './HomeInventoryItems.css';
 import useItems from '../../../hooks/useItems';
 import HomeInventoryItem from '../HomeInventoryItem/HomeInventoryItem';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../Login/Loading/Loading';
 
 const HomeInventoryItems = () => {
     const navigate = useNavigate();

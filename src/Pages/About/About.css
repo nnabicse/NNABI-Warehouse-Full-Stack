@@ -1,0 +1,129 @@
+.about-section-container {
+    width: 75%;
+    margin: auto;
+    height: 86vh;
+}
+
+.about-header-container {
+    text-align: center;
+}
+
+.about-header {
+    font-weight: 700;
+    background-color: salmon;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.about-image-container {
+    text-align: center;
+}
+
+.about-image {
+    border-radius: 50%;
+    border: 5px solid peru;
+}
+
+.detail-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+
+.name {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    color: peru;
+}
+
+.education {
+    font-weight: 700;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .about-section-container {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .detail-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        grid-gap: 30px;
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .about-section-container {
+        width: 100%;
+        margin: auto;
+        padding: 15px;
+    }
+
+    .detail-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        grid-gap: 30px;
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .about-section-container {
+        width: 75%;
+        margin: auto;
+    }
+
+    .detail-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        grid-gap: 30px;
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .about-section-container {
+        width: 75%;
+        margin: auto;
+    }
+
+    .detail-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        grid-gap: 30px;
+        margin-top: 50px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .about-section-container {
+        width: 75%;
+        margin: auto;
+    }
+
+    .detail-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        grid-gap: 30px;
+        margin-top: 50px;
+    }
+}

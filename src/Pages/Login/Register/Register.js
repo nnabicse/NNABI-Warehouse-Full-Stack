@@ -51,7 +51,9 @@ const Register = () => {
     }
     return (
         <div className='register-container'>
-            <h2 className='register-header'>Please Register</h2>
+            <div className='register-header-container'>
+                <h1 className='register-header'>PLEASE REGISTER</h1>
+            </div>
             <div className='register-form-and-text-container'>
                 <Form className='register-form' onSubmit={handleRegister}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -73,8 +75,8 @@ const Register = () => {
                     <button disabled={!agree} className='btn btn-primary' type='submit'>Submit</button>
                 </Form>
                 <p>Already Have a Account? <Link to='/login' className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link></p>
+                <SocialLogin></SocialLogin>
             </div>
-            <SocialLogin></SocialLogin>
         </div>
     );
 };
