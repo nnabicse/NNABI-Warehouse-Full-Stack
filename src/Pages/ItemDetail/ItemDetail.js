@@ -10,7 +10,7 @@ const ItemDetail = () => {
     const { id } = useParams();
     const [item, setItem] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/item/${id}`)
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item/${id}`)
             .then(res => res.json())
             .then(item => setItem(item))
     }, [item])
@@ -22,7 +22,7 @@ const ItemDetail = () => {
         const newQuantity = parseInt(item.quantity) - 1;
         const updatedQuantity = { newQuantity };
 
-        fetch(`http://localhost:5000/item/${id}`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const ItemDetail = () => {
         const qty = qtyRef.current.value;
         const newQuantity = parseInt(item.quantity) + parseInt(qty);
         const updatedQuantity = { newQuantity };
-        fetch(`http://localhost:5000/item/${id}`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

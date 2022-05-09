@@ -11,7 +11,7 @@ const ManageItems = () => {
         if (!proceed) {
             return
         }
-        fetch(`http://localhost:5000/item/${id}`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

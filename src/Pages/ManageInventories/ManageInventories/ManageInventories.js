@@ -8,7 +8,7 @@ const ManageInventories = () => {
     const navigate = useNavigate();
     const [items, setItems] = useItems();
     const handleDeleteButton = (id) => {
-        fetch(`http://localhost:5000/item/${id}`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

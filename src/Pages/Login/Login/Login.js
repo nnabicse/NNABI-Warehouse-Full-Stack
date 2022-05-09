@@ -40,7 +40,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email });
+        const { data } = await axios.post('https://glacial-anchorage-62704.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken)
         toast("Login Successfull")
     }

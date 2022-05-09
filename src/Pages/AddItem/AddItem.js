@@ -28,7 +28,7 @@ const AddItem = () => {
         const newItem = { name, price, quantity, image, desc, supplier, email }
 
 
-        fetch(`http://localhost:5000/item`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

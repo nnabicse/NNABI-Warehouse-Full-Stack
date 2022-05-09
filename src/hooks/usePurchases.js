@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const usePurchases = () => {
     const [purchases, setPurchases] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/purchase')
+        fetch('https://glacial-anchorage-62704.herokuapp.com/purchase')
             .then(res => res.json())
             .then(data => setPurchases(data))
     }, []);

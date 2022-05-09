@@ -15,7 +15,7 @@ const MyItems = () => {
     useEffect(() => {
         const getMyItems = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/myitem?email=${email}`;
+            const url = `https://glacial-anchorage-62704.herokuapp.com/myitem?email=${email}`;
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MyItems = () => {
             return
         }
 
-        fetch(`http://localhost:5000/item/${id}`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

@@ -13,7 +13,7 @@ const IncomingPurchases = () => {
         const purchase = { img, price, name, quantity, supplier, desc };
         const { _id } = purchase;
 
-        fetch(`http://localhost:5000/item`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/item`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -23,7 +23,7 @@ const IncomingPurchases = () => {
 
     }
     const handleRemoveforRecieve = (id) => {
-        fetch(`http://localhost:5000/purchase/${id}`, {
+        fetch(`https://glacial-anchorage-62704.herokuapp.com/purchase/${id}`, {
             method: 'DELETE',
 
         })
